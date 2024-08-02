@@ -1,12 +1,15 @@
 require("dotenv").config();
-var cors = require('cors')
+const cors = require('cors');
+const authRouter=require("./routes/auth")
 const app = require("express")();
 const port = process.env.PORT;
-
-require("./config/db");
-app.use(cors());
 const bodyParser = require("express").json;
+require("./config/db");
+
+
+app.use(cors());
 app.use(bodyParser());
+app.use("/api/auth",authRouter)
 app.listen(port, () => {
   console.log("Server started");
 });
