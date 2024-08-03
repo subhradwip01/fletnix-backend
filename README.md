@@ -148,8 +148,8 @@
   
  ### Testing result:
  #### Environment:
-  OS: Windows
-  Node Version : v18.17.1
+  - OS: Windows
+  - Node Version : v18.17.1
  #### Result:
  #### Auth test:
    ![Screenshot 2024-08-03 132750](https://github.com/user-attachments/assets/6a1a40f1-1df4-4be3-84bc-03a5f353a417)
