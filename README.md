@@ -158,7 +158,8 @@
  #### Show test:
    ![Screenshot 2024-08-03 144700](https://github.com/user-attachments/assets/ef25f8d8-efd5-4836-a0ec-0a7544a0fbac)
 
-   
+  ### Frontend Repo:
+  https://github.com/subhradwip01/fletnix-ui
 
      
   
