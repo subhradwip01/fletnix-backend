@@ -8,12 +8,11 @@ const isAuthenticated = async (req,res,next)=>{
         }
         
         const decodedToken = jwt.decode(authToken);
-        console.log(decodedToken);
         req.body.userId = decodedToken.id;
         next();
     }catch(e){
         res.status(401).json({
-            message:e.message || 'You are not Authorized'
+            message:'You are not Authorized'
         })
     }
 } 

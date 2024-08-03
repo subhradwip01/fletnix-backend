@@ -4,12 +4,10 @@ const jwt = require('jsonwebtoken');
 const { NAME_PATTERN, EMAIL_PATTERN } = require("../utils/utils");
 exports.register = async (req, res) => {
     try {
-        console.log(req.body);
         let { name, email, password, age } = req.body;
         name = name.trim();
         email = email.trim();
         password = password.trim();
-        console.log(name, email, password);
         if (name == "" || email == "" || password == "") {
             res.status(301).json({
                 status: "failed",
@@ -49,7 +47,6 @@ exports.register = async (req, res) => {
         await newUser.save();
         res.status(201).json({ message: 'User registered successfully' });
     } catch (error) {
-        console.error(error);
         res.status(500).json({ message: 'Internal server error' });
     }
 };
@@ -68,7 +65,6 @@ exports.login = async (req, res) => {
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
         res.json({ message: 'Login successful', data: { token, name:user.name } });
     } catch (error) {
-        console.error(error);
         res.status(500).json({ message: 'Internal server error' });
     }
 };
