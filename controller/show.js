@@ -45,11 +45,12 @@ const getShowById = async (req, res) => {
     if (!user) {
       return res.status(404).json({ message: "You are not allowed to view the show. Please login and try again" });
     }
-    if (user.age < 18) {
+    const show = await Show.findOne({ show_id: showId });
+
+    if (user.age < 18 && show.type === 'R') {
       return res.status(403).json({ message: "You are under aged to see the show" });
     }
 
-    const show = await Show.findOne({ show_id: showId });
     if (!show) {
       return res.status(404).json({ message: 'Show not found' });
     }
