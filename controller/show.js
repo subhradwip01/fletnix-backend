@@ -47,7 +47,7 @@ const getShowById = async (req, res) => {
     }
     const show = await Show.findOne({ show_id: showId });
 
-    if (user.age < 18 && show.type === 'R') {
+    if (user.age < 18 && show.rating === 'R') {
       return res.status(403).json({ message: "You are under aged to see the show" });
     }
 
