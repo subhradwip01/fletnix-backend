@@ -1,5 +1,5 @@
 const request = require("supertest");
-const app = require("../index"); // Assuming your Express app is exported from app.js
+const app = require("../index");
 const { ROUTES } = require("../constants/routes");
 
 describe("Auth Routes", () => {
